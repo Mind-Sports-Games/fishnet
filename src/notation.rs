@@ -105,7 +105,7 @@ impl FromStr for Fen {
         ShakmatyFen::from_ascii(fen.as_bytes()).map_or_else(
             |_| {
                 for v in availableVariants() {
-                    if validateFEN(&v, &fen.to_string(), v == "chess960") {
+                    if validateFEN(&v, &fen.to_string(), true) {
                         return Ok(Fen::FairyStockfish(fen.to_string()));
                     }
                 }
