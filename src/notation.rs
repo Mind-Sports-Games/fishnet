@@ -165,6 +165,17 @@ fn valid_square_pair(c: &[u8]) -> bool {
     }
 }
 
+fn slice_find(haystack: &[u8], needle: u8) -> Option<usize> {
+    let mut usize = 0;
+    while usize < haystack.len() {
+        if haystack[usize] == needle {
+            return Some(usize);
+        }
+        usize += 1;
+    }
+    return None;
+}
+
 impl Uci {
     pub fn null() -> Uci {
         Uci {
@@ -173,6 +184,21 @@ impl Uci {
     }
 
     pub fn from_ascii(uci: &[u8]) -> Result<Uci, UciParseError> {
+        // Deal with double moves
+        if let Some(i) = slice_find(uci, b',') {
+            let first = &uci[0..i];
+            let second = &uci[(i+1)..uci.len()];
+            if let (Ok(_), Ok(_)) = (Uci::from_ascii(first), Uci::from_ascii(second)) {
+                unsafe {
+                    return Ok(Uci {
+                        notation: String::from_utf8_unchecked(uci.to_vec()),
+                    });
+                }
+            }
+            return Err(UciParseError::InvalidUci);
+
+        }
+
         if uci.len() < 4 || uci.len() > 7 {
             return Err(UciParseError::InvalidUci);
         }
