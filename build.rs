@@ -86,7 +86,7 @@ impl Target {
                 .env(
                     "CXXFLAGS",
                     format!(
-                        "{} -DNNUE_EMBEDDING_OFF -DLARGEBOARDS -DPRECOMPUTED_MAGICS",
+                        "{} -DNNUE_EMBEDDING_OFF -DLARGEBOARDS -DPRECOMPUTED_MAGICS -DALLVARS -DIS_64BIT",
                         env::var("CXXFLAGS").unwrap_or_default()
                     )
                 )
