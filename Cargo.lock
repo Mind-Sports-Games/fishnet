@@ -917,9 +917,9 @@ dependencies = [
 
 [[package]]
 name = "rsffish"
-version = "0.0.18"
+version = "0.0.18-amazonsfix1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c3101286a24922fa43f45dc72204262cbe9e95549633f7ef2a92f9a5c762f7c"
+checksum = "3cd4719df314200014735c8e041c348b2b13e047c0539ed2416650023bad4fb4"
 dependencies = [
  "cxx",
  "cxx-build",
@@ -927,9 +927,9 @@ dependencies = [
 
 [[package]]
 name = "rustix"
-version = "0.37.4"
+version = "0.37.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c348b5dc624ecee40108aa2922fed8bad89d7fcc2b9f8cb18f632898ac4a37f9"
+checksum = "0e78cc525325c06b4a7ff02db283472f3c042b7ff0c391f96c6d5ac6f4f91b75"
 dependencies = [
  "bitflags",
  "errno",
