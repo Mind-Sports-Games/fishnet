@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   linux-x86-64:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       CXX: g++-11
     steps:
