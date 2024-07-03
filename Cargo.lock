@@ -917,9 +917,9 @@ dependencies = [
 
 [[package]]
 name = "rsffish"
-version = "0.0.18-amazonsfix1"
+version = "0.0.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3cd4719df314200014735c8e041c348b2b13e047c0539ed2416650023bad4fb4"
+checksum = "c45830068d026af358cd49d9b5020b8569cfd1871eec298b7631c703e2064cc5"
 dependencies = [
  "cxx",
  "cxx-build",
