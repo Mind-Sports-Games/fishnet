@@ -56,7 +56,7 @@ impl FromStr for Variant {
         match &variant_name.to_lowercase()[..] {
             "antichess" => Ok(Variant::Lichess(LichessVariant::Antichess)),
             "atomic" => Ok(Variant::Lichess(LichessVariant::Atomic)),
-            "chess960" => Ok(Variant::Lichess(LichessVariant::Chess960)),
+            "chess960" | "fischerandom" => Ok(Variant::Lichess(LichessVariant::Chess960)),
             "crazyhouse" => Ok(Variant::Lichess(LichessVariant::Crazyhouse)),
             "fromposition" => Ok(Variant::Lichess(LichessVariant::FromPosition)),
             "horde" => Ok(Variant::Lichess(LichessVariant::Horde)),
